@@ -51,7 +51,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     ScrollingModule,
     DragDropModule,
     NzMenuModule,
-    NzToolTipModule
+    NzToolTipModule,
   ],
   exports: [FormsModule],
   providers: [

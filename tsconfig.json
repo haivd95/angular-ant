@@ -31,7 +31,7 @@
     ],
     "types": ["node"]
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "**/*.spec.ts"],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
