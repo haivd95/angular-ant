@@ -24,6 +24,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import { IconDefinition } from '@ant-design/icons-angular';
+import { SidebarComponent } from './shared/layout/sidebar/sidebar.component';
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
@@ -32,42 +33,42 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
 
 
 @NgModule({
-    declarations: [
-        AppComponent, MainLayoutComponent, FooterComponent,
-    ],
-    imports: [
-        AppRoutingModule, BrowserAnimationsModule,
-        FormsModule, NgbModule, BrowserModule,
-        CommonModule,
-        HttpClientModule,
-        ErrorPageModule,
-        NzLayoutModule,
-        NzBreadCrumbModule,
-        NzInputModule,
-        NzSelectModule,
-        NzTagModule,
-        NzIconModule,
-        ScrollingModule,
-        DragDropModule,
-        NzMenuModule,
-        NzToolTipModule
-    ],
-    exports: [FormsModule],
-    providers: [
-        HttpClient,
-        { provide: LocationStrategy, useClass: PathLocationStrategy },
-        // { provide: NgModuleFactoryLoader, useClass: SystemJsNgModuleLoader },
-        { provide: 'APP_CONFIG', useClass: AppConfig },
-        { provide: HTTP_INTERCEPTORS, useClass: CustomErrorInterceptor, multi: true },
-        { provide: NZ_ICONS, useValue: icons }
-    ],
-    bootstrap: [AppComponent],
+  declarations: [
+    AppComponent, MainLayoutComponent, FooterComponent, SidebarComponent
+  ],
+  imports: [
+    AppRoutingModule, BrowserAnimationsModule,
+    FormsModule, NgbModule, BrowserModule,
+    CommonModule,
+    HttpClientModule,
+    ErrorPageModule,
+    NzLayoutModule,
+    NzBreadCrumbModule,
+    NzInputModule,
+    NzSelectModule,
+    NzTagModule,
+    NzIconModule,
+    ScrollingModule,
+    DragDropModule,
+    NzMenuModule,
+    NzToolTipModule
+  ],
+  exports: [FormsModule],
+  providers: [
+    HttpClient,
+    { provide: LocationStrategy, useClass: PathLocationStrategy },
+    // { provide: NgModuleFactoryLoader, useClass: SystemJsNgModuleLoader },
+    { provide: 'APP_CONFIG', useClass: AppConfig },
+    { provide: HTTP_INTERCEPTORS, useClass: CustomErrorInterceptor, multi: true },
+    { provide: NZ_ICONS, useValue: icons }
+  ],
+  bootstrap: [AppComponent],
 })
 
 export class AppModule {
-    static injector: Injector;
+  static injector: Injector;
 
-    constructor(injector: Injector) {
-        AppModule.injector = injector;
-    }
+  constructor(injector: Injector) {
+    AppModule.injector = injector;
+  }
 }

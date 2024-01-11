@@ -1,0 +1,15 @@
+.logo-sidebar {
+  height: 64px !important;
+  background: rgba(255, 255, 255, 0.2);
+}
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: red;
+}
