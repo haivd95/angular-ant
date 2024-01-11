@@ -10,21 +10,10 @@ import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common
 import { ErrorPageModule } from '../error-page/error-page.module';
 import { CustomErrorInterceptor } from './shared/interceptors/CustomErrorInterceptor';
 import { AppConfig } from './app.config';
-import { MainLayoutComponent } from './shared/layout/main-layout/main-layout.component';
-import { FooterComponent } from './shared/layout/footer/footer.component';
-import { NzLayoutModule } from 'ng-zorro-antd/layout';
-import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
-import { NzInputModule } from 'ng-zorro-antd/input';
-import { NzSelectModule } from 'ng-zorro-antd/select';
-import { NzTagModule } from 'ng-zorro-antd/tag';
-import { NZ_ICONS, NzIconModule } from 'ng-zorro-antd/icon';
-import { ScrollingModule } from '@angular/cdk/scrolling';
-import { DragDropModule } from '@angular/cdk/drag-drop';
-import { NzMenuModule } from 'ng-zorro-antd/menu';
-import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NZ_ICONS } from 'ng-zorro-antd/icon';
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import { IconDefinition } from '@ant-design/icons-angular';
-import { SidebarComponent } from './shared/layout/sidebar/sidebar.component';
+import { LayoutModule } from './shared/layouts/layout.module';
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
@@ -34,7 +23,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
 
 @NgModule({
   declarations: [
-    AppComponent, MainLayoutComponent, FooterComponent, SidebarComponent
+    AppComponent
   ],
   imports: [
     AppRoutingModule, BrowserAnimationsModule,
@@ -42,16 +31,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     CommonModule,
     HttpClientModule,
     ErrorPageModule,
-    NzLayoutModule,
-    NzBreadCrumbModule,
-    NzInputModule,
-    NzSelectModule,
-    NzTagModule,
-    NzIconModule,
-    ScrollingModule,
-    DragDropModule,
-    NzMenuModule,
-    NzToolTipModule,
+    LayoutModule
   ],
   exports: [FormsModule],
   providers: [

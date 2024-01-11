@@ -1,18 +1,18 @@
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductsRoutingModule, routes } from './products.routing.module';
-import { ProductComponent } from './product-component/product.component';
+import { PostsRoutingModule, routes } from './posts.routing.module';
+import { PostsComponent } from './post-component/post.component';
 
 @NgModule({
-  declarations: [ProductComponent],
+  declarations: [PostsComponent],
   imports: [
     CommonModule,
-    ProductsRoutingModule,
+    PostsRoutingModule,
     FormsModule
   ],
   providers: []
 })
-export class ProductsModule {
+export class PostsModule {
   static routerMapComponent = routes;
 }

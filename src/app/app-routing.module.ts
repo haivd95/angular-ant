@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { P404Component } from '../error-page/404.component';
-import { MainLayoutComponent } from './shared/layout/main-layout/main-layout.component';
-import { PostsComponent } from './templates/posts/posts.component';
-import { ProductsRoutingModule } from './templates/products/products.routing.module';
+import { LayoutComponent } from './shared/layouts/layout.component';
 
 
 const routes: Routes = [
   {
-    path: '', component: MainLayoutComponent,
+    path: '', component: LayoutComponent,
     children: [
       { path: 'products', loadChildren: () => import('./templates/products/products.module').then(m => m.ProductsModule) },
-      { path: 'posts', component: PostsComponent, pathMatch: 'full'},
+      { path: 'posts', loadChildren: () => import('./templates/posts/posts.module').then(m => m.PostsModule) },
     ]
   },
   {
