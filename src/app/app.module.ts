@@ -14,6 +14,11 @@ import { NZ_ICONS } from 'ng-zorro-antd/icon';
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import { IconDefinition } from '@ant-design/icons-angular';
 import { LayoutModule } from './shared/layouts/layout.module';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { reducers, metaReducers } from './shared/store';
+import { environment } from '../environments/environment';
+import { ApiService } from './api/services/api.service';
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
@@ -27,6 +32,16 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
   ],
   imports: [
     AppRoutingModule, BrowserAnimationsModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+      runtimeChecks: {
+          strictStateImmutability: false,
+          strictActionImmutability: false,
+          strictStateSerializability: false,
+          strictActionSerializability: false
+      }
+  }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     FormsModule, NgbModule, BrowserModule,
     CommonModule,
     HttpClientModule,
@@ -36,6 +51,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
   exports: [FormsModule],
   providers: [
     HttpClient,
+    ApiService,
     { provide: LocationStrategy, useClass: PathLocationStrategy },
     // { provide: NgModuleFactoryLoader, useClass: SystemJsNgModuleLoader },
     { provide: 'APP_CONFIG', useClass: AppConfig },

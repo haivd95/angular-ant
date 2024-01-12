@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { environment } from '../environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 declare var $: any;
 @Component({
@@ -12,6 +10,6 @@ declare var $: any;
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  constructor() { }
+  constructor(private http: HttpClient) { }
   title = 'Angular core';
 }

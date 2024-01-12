@@ -1,6 +1,6 @@
 export const environment = {
   clientId: 'mobileMoney-client',
-  apiUrl: 'http://web-uat.digital.vn',
+  apiUrl: 'https://jsonplaceholder.typicode.com',
   production: false,
   WEB_URL: 'http://localhost:4200',
 };
