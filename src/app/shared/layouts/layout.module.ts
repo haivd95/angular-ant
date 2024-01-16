@@ -15,9 +15,13 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
-
+import { HeaderComponent } from './header/header.component';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
-  declarations: [LayoutComponent, FooterComponent, SidebarComponent],
+  declarations: [LayoutComponent, FooterComponent, SidebarComponent, HeaderComponent],
   imports: [
     CommonModule,
     LayoutRoutingModule,
@@ -32,6 +36,10 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
     DragDropModule,
     NzMenuModule,
     NzToolTipModule,
+    NzPopoverModule,
+    NzButtonModule,
+    NzAvatarModule,
+    NgbModule
   ],
   providers: []
 })

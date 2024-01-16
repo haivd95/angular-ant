@@ -19,6 +19,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers, metaReducers } from './shared/store';
 import { environment } from '../environments/environment';
 import { ApiService } from './api/services/api.service';
+import { SharedModuleModule } from './shared/shared-module/shared-module.module';
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
@@ -42,11 +43,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
       }
   }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    FormsModule, NgbModule, BrowserModule,
-    CommonModule,
-    HttpClientModule,
-    ErrorPageModule,
-    LayoutModule
+    FormsModule,
+    SharedModuleModule
   ],
   exports: [FormsModule],
   providers: [

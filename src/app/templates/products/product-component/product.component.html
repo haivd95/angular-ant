@@ -1,1 +1,16 @@
-<p style="color: red;">products works!12312321321</p>
+<p class="mb-8" style="color: red">products works!12312321321</p>
+<button
+  nz-button
+  nzType="primary"
+  nz-popover
+  nzPopoverTitle="Title"
+  [(nzPopoverVisible)]="visible"
+  (nzPopoverVisibleChange)="change($event)"
+  nzPopoverTrigger="click"
+  [nzPopoverContent]="contentTemplate"
+>
+  Click me
+</button>
+<ng-template #contentTemplate>
+  <a (click)="clickMe()">Close</a>
+</ng-template>

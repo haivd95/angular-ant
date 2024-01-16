@@ -1,0 +1,24 @@
+<nz-header nzTheme="light">
+  <div class="">
+    <div class="user" style=" clear: both;">
+      <nz-avatar
+        nzIcon="user"
+        [nzSize]="46"
+        nz-popover
+        nz-popover
+        [nzPopoverContent]="contentTemplate"
+        nzPopoverPlacement="bottom"
+        nzPopoverTrigger="click"
+      />
+      <ng-template #contentTemplate>
+        <div>
+          <a>Profile</a>
+        </div>
+        <div>
+          <a>Logout</a>
+        </div>
+      </ng-template>
+      <span style="margin-left: 10px; font-weight: 500;">Vũ Đức Hải</span>
+    </div>
+  </div>
+</nz-header>

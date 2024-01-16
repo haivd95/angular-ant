@@ -4,7 +4,7 @@ nz-header {
 }
 
 nz-content {
-  margin: 0 16px;
+  margin: 26px 16px;
 }
 
 nz-breadcrumb {
@@ -12,7 +12,13 @@ nz-breadcrumb {
 }
 
 .inner-content {
+  border-radius: 10px;
+  margin-right: 15px;
   padding: 24px;
   background: #fff;
-  min-height: 100vh;
+  min-height: 763px;
+}
+
+.ant-layout-content {
+  margin: 0px 0px 16px 16px;
 }

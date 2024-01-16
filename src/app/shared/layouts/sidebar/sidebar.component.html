@@ -1,28 +1,65 @@
-<div class="logo-sidebar"></div>
-<ul nz-menu nzTheme="dark" nzMode="inline" nzCollapsible="true">
-  <li nz-menu-item>
-    <span nz-icon nzType="pie-chart"></span>
-    <span>Option 1</span>
-  </li>
-  <li nz-menu-item>
-    <span nz-icon nzType="desktop"></span>
-    <span>Option 2</span>
-  </li>
-  <li nz-submenu nzTitle="User" nzIcon="user">
-    <ul>
-      <li nz-menu-item [routerLink]="['./products']">Products</li>
-      <li nz-menu-item [routerLink]="['./posts']">Posts</li>
-      <li nz-menu-item>Alex</li>
+<div class="logo-sidebar" [routerLink]="['./']">
+  <img src="../../../../assets/images/logo-angular.svg" alt="">
+  <span>Angular Admin</span>
+</div>
+<div id="scrollbar-color" [ngClass]="isScrollable? 'scrollbar' : 'scrollbar-none'">
+    <ul nz-menu nzTheme="dark" nzMode="inline" nzCollapsible="true">
+      <li nz-menu-item>
+        <span nz-icon nzType="pie-chart"></span>
+        <span>Option 1</span>
+      </li>
+      <li nz-menu-item>
+        <span nz-icon nzType="desktop"></span>
+        <span>Option 2</span>
+      </li>
+      <li nz-submenu nzTitle="User" nzIcon="user">
+        <ul>
+          <li nz-menu-item [routerLink]="['./products']">Products</li>
+          <li nz-menu-item [routerLink]="['./posts']">Posts</li>
+          <li nz-menu-item>Alex</li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Team" nzIcon="team">
+        <ul>
+          <li nz-menu-item>Team 1</li>
+          <li nz-menu-item>Team 2</li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Team" nzIcon="team">
+        <ul>
+          <li nz-menu-item>Team 1</li>
+          <li nz-menu-item>Team 2</li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Team" nzIcon="team">
+        <ul>
+          <li nz-menu-item>Team 1</li>
+          <li nz-menu-item>Team 2</li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Team" nzIcon="team">
+        <ul>
+          <li nz-menu-item>Team 1</li>
+          <li nz-menu-item>Team 2</li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Team" nzIcon="team">
+        <ul>
+          <li nz-menu-item>Team 1</li>
+          <li nz-menu-item>Team 2</li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Team" nzIcon="team">
+        <ul>
+          <li nz-menu-item>Team 1</li>
+          <li nz-menu-item>Team 2</li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Team" nzIcon="team">
+        <ul>
+          <li nz-menu-item>Team 1</li>
+          <li nz-menu-item>Team 2</li>
+        </ul>
+      </li>
     </ul>
-  </li>
-  <li nz-submenu nzTitle="Team" nzIcon="team">
-    <ul>
-      <li nz-menu-item>Team 1</li>
-      <li nz-menu-item>Team 2</li>
-    </ul>
-  </li>
-  <li nz-menu-item>
-    <span nz-icon nzType="file"></span>
-    <span>File</span>
-  </li>
-</ul>
+</div>
