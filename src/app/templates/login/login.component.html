@@ -3,16 +3,16 @@
     <div class="shape"></div>
     <div class="shape"></div>
   </div>
-  <form>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <h3>Login Here</h3>
 
     <label for="username">Username</label>
-    <input type="text" placeholder="Email or Phone" id="username" />
+    <input type="text" placeholder="Email or Phone" formControlName="username" />
 
     <label for="password">Password</label>
-    <input type="password" placeholder="Password" id="password" />
-    <span [routerLink]="['/']">
-      <button style="color: black;" >Log In</button>
+    <input type="password" placeholder="Password" formControlName="password" />
+    <span >
+      <button style="color: black;" type="submit">Log In</button>
     </span>
     <div class="social">
       <div class="go"><i class="fab fa-google"></i> Google</div>
