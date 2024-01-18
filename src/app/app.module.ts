@@ -9,15 +9,15 @@ import { AppConfig } from './app.config';
 import { NZ_ICONS } from 'ng-zorro-antd/icon';
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import { IconDefinition } from '@ant-design/icons-angular';
-import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { reducers, metaReducers } from './shared/store';
 import { environment } from '../environments/environment';
 import { ApiService } from './api/services/api.service';
 import { SharedModuleModule } from './shared/shared-module/shared-module.module';
 import { CustomErrorInterceptor } from './shared/interceptors/CustomErrorInterceptor';
 import { LoadingSpinnerModule } from './shared/component/loading-spinner/loading-spinner.module';
 import { LoadingSpinnerService } from './api/services/loadingSpinnerService';
+import { StoreModule } from '@ngrx/store';
+import { appReducers } from './shared/store/app.reducer';
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
@@ -31,15 +31,16 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
   ],
   imports: [
     AppRoutingModule, BrowserAnimationsModule,
-    StoreModule.forRoot(reducers, {
-      metaReducers,
-      runtimeChecks: {
-          strictStateImmutability: false,
-          strictActionImmutability: false,
-          strictStateSerializability: false,
-          strictActionSerializability: false
-      }
-  }),
+    StoreModule.forRoot(appReducers),
+    // StoreModule.forRoot(reducers, {
+    //   metaReducers,
+    //   runtimeChecks: {
+    //     strictStateImmutability: false,
+    //     strictActionImmutability: false,
+    //     strictStateSerializability: false,
+    //     strictActionSerializability: false
+    //   }
+    // }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     FormsModule,
     SharedModuleModule,

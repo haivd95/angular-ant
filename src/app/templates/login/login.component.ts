@@ -5,8 +5,9 @@ import { Router } from "@angular/router"
 import { ToastrService } from 'ngx-toastr';
 import { LoadingSpinnerService } from '../../api/services/loadingSpinnerService';
 import { concatMap, finalize } from 'rxjs';
-import { SetUserInfo } from './user-info.actions';
 import { Store } from '@ngrx/store';
+import { SetUserInfoAction } from './user-info.actions';
+import { AppState } from '../../shared/store/app.state';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -22,7 +23,7 @@ export class LoginComponent {
     private router: Router,
     private toastr: ToastrService,
     private loadingSpinnerService: LoadingSpinnerService,
-    private store: Store
+    private store: Store<AppState>
   ) {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
@@ -49,7 +50,7 @@ export class LoginComponent {
         })
       ).subscribe({
            next: (userInfo ) => {
-            this.store.dispatch(new SetUserInfo(userInfo));
+            this.store.dispatch(new SetUserInfoAction(userInfo));
             this.router.navigate(['./'])
             this.toastr.success('Login success')
           },
@@ -59,21 +60,6 @@ export class LoginComponent {
           }
         }
       );
-      // this.apiLogin.login(user)
-      //   .pipe(finalize(() => {
-      //     this.loadingSpinnerService.hide();
-
-      //     return this.apiLogin.getUserInfo({id: '1'});
-      //   }))
-      //   .subscribe({
-      //     next: (token) => {
-      //       this.router.navigate(['./'])
-      //       this.toastr.success('Login success')
-      //     },
-      //     error: (e) => {
-      //       this.toastr.error(e.status.message)
-      //     }
-      //   })
     }
   }
 }

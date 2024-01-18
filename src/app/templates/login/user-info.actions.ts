@@ -1,13 +1,14 @@
 import { Action } from '@ngrx/store';
 
 export enum UserActionTypes {
-  SetUserInfo = '[User] Set User Info'
+  SetUserInfo = '[User] Set User Info',
+  // Định nghĩa các action khác tương tự
 }
 
-export class SetUserInfo implements Action {
+export class SetUserInfoAction implements Action {
   readonly type = UserActionTypes.SetUserInfo;
 
-  constructor(public payload: any) {} // payload chứa thông tin người dùng
+  constructor(public payload: any) {}
 }
 
-export type UserActions = SetUserInfo;
+// Định nghĩa các action khác tương tự
