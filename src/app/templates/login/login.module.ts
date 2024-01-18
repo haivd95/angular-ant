@@ -14,7 +14,7 @@ import { BrowserModule } from '@angular/platform-browser';
     FormsModule,
     NzPopoverModule,
     LoginRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: []
 })

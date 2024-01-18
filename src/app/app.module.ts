@@ -15,7 +15,9 @@ import { reducers, metaReducers } from './shared/store';
 import { environment } from '../environments/environment';
 import { ApiService } from './api/services/api.service';
 import { SharedModuleModule } from './shared/shared-module/shared-module.module';
-import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
+import { CustomErrorInterceptor } from './shared/interceptors/CustomErrorInterceptor';
+import { LoadingSpinnerModule } from './shared/component/loading-spinner/loading-spinner.module';
+import { LoadingSpinnerService } from './api/services/loadingSpinnerService';
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
@@ -40,7 +42,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
   }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     FormsModule,
-    SharedModuleModule
+    SharedModuleModule,
+    LoadingSpinnerModule
   ],
   exports: [FormsModule],
   providers: [
@@ -49,8 +52,9 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     { provide: LocationStrategy, useClass: PathLocationStrategy },
     // { provide: NgModuleFactoryLoader, useClass: SystemJsNgModuleLoader },
     { provide: 'APP_CONFIG', useClass: AppConfig },
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    { provide: NZ_ICONS, useValue: icons }
+    { provide: HTTP_INTERCEPTORS, useClass: CustomErrorInterceptor, multi: true },
+    { provide: NZ_ICONS, useValue: icons },
+    LoadingSpinnerService
   ],
   bootstrap: [AppComponent],
 })

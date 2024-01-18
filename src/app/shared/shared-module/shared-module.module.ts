@@ -11,16 +11,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [],
   imports: [
     CommonModule,
+    BrowserModule,
     HttpClientModule,
     NgbModule,
     ErrorPageModule,
-    BrowserModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      timeOut: 2000,
+      timeOut: 10000,
       positionClass: 'toast-top-center',
       preventDuplicates: true,
     }),
-  ]
+  ],
+  providers: [
+  ],
+  exports: [ErrorPageModule]
 })
 export class SharedModuleModule { }

@@ -25,7 +25,4 @@ export class ApiService {
     return this.http.delete(url);
   }
 
-  // public login(param: LoginModel): Observable<any> {
-  //   return this.post(LOGIN, param);
-  // }
 }
