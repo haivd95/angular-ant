@@ -46,19 +46,19 @@ export class LoginComponent {
           localStorage.setItem('token', loginResponse.token);
           // Gọi API getUserInfo() sau khi đăng nhập thành công
           this.loadingSpinnerService.hide();
-          return this.apiLogin.getUserInfo({id: '1'});
+          return this.apiLogin.getUserInfo({ id: '1' });
         })
       ).subscribe({
-           next: (userInfo ) => {
-            this.store.dispatch(new SetUserInfoAction(userInfo));
-            this.router.navigate(['./'])
-            this.toastr.success('Login success')
-          },
-          error: (e) => {
-            this.toastr.error(e.status.message)
-            this.loadingSpinnerService.hide();
-          }
+        next: (userInfo) => {
+          this.store.dispatch(new SetUserInfoAction(userInfo));
+          this.router.navigate(['./'])
+          this.toastr.success('Login success')
+        },
+        error: (e) => {
+          this.toastr.error(e.status.message)
+          this.loadingSpinnerService.hide();
         }
+      }
       );
     }
   }

@@ -1,3 +1,4 @@
+import { metaReducers } from './shared/store/app.meta-reducers';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Injector, NgModule, } from "@angular/core";
 import { AppComponent } from "./app.component";
@@ -24,23 +25,16 @@ const antDesignIcons = AllIcons as {
 };
 const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key])
 
-
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     AppRoutingModule, BrowserAnimationsModule,
-    StoreModule.forRoot(appReducers),
-    // StoreModule.forRoot(reducers, {
-    //   metaReducers,
-    //   runtimeChecks: {
-    //     strictStateImmutability: false,
-    //     strictActionImmutability: false,
-    //     strictStateSerializability: false,
-    //     strictActionSerializability: false
-    //   }
-    // }),
+    StoreModule.forRoot(
+      appReducers,
+      { metaReducers }
+    ),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     FormsModule,
     SharedModuleModule,
@@ -51,7 +45,6 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     HttpClient,
     ApiService,
     { provide: LocationStrategy, useClass: PathLocationStrategy },
-    // { provide: NgModuleFactoryLoader, useClass: SystemJsNgModuleLoader },
     { provide: 'APP_CONFIG', useClass: AppConfig },
     { provide: HTTP_INTERCEPTORS, useClass: CustomErrorInterceptor, multi: true },
     { provide: NZ_ICONS, useValue: icons },

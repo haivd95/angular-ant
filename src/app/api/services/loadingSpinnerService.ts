@@ -9,12 +9,10 @@ export class LoadingSpinnerService {
   loadingState = this.loadingSubject.asObservable();
 
   show() {
-    console.log('________2222________', 2222);
     this.loadingSubject.next(true);
   }
 
   hide() {
-    console.log('________333333________', 333333);
     this.loadingSubject.next(false);
   }
 }
