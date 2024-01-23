@@ -3,7 +3,7 @@ import { LoginService } from './../../api/services/login.service';
 import { Component } from '@angular/core';
 import { Router } from "@angular/router"
 import { ToastrService } from 'ngx-toastr';
-import { LoadingSpinnerService } from '../../api/services/loadingSpinnerService';
+import { LoadingSpinnerService } from '../../api/services/loadingSpinnerService.service';
 import { concatMap, finalize } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { SetUserInfoAction } from './user-info.actions';
