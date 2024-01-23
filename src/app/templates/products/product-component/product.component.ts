@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataSharingBreadcrumbService } from '../../../api/services/data-sharing-breadcrumb.service';
 
 @Component({
   selector: 'app-product',
@@ -6,6 +7,13 @@ import { Component } from '@angular/core';
   styleUrl: './product.component.scss'
 })
 export class ProductComponent {
+  constructor(private dataSharingBreadcrumb: DataSharingBreadcrumbService) {
+    this.dataSharingBreadcrumb.setDataBreadcrumb({
+      name: ['products'],
+      link: '/products'
+    })
+  }
+
   visible: boolean = false;
 
   clickMe(): void {

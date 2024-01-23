@@ -2,6 +2,7 @@
   <div class="">
     <div class="user" style=" clear: both;">
       <nz-avatar
+        style="cursor: pointer;"
         nzIcon="user"
         [nzSize]="46"
         nz-popover
@@ -11,12 +12,27 @@
         nzPopoverTrigger="click"
       />
       <ng-template #contentTemplate>
-        <div>
-          <a>Profile</a>
+        <div (click)="logout()" style="cursor: pointer;display: flex;align-items: center;padding: 10px 8px;">
+          <span nz-icon nzType="logout" nzTheme="outline" style="color: red;padding-right: 15px"></span>
+          <span>Logout</span>
         </div>
-        <div>
-          <a>Logout</a>
+        <div (click)="logout()" style="cursor: pointer;display: flex;align-items: center;padding: 10px 8px;">
+          <span nz-icon nzType="logout" nzTheme="outline" style="color: red;padding-right: 15px"></span>
+          <span>Logout</span>
         </div>
+        <div (click)="logout()" style="cursor: pointer;display: flex;align-items: center;padding: 10px 8px;">
+          <span nz-icon nzType="logout" nzTheme="outline" style="color: red;padding-right: 15px"></span>
+          <span>Logout</span>
+        </div>
+        <div (click)="logout()" style="cursor: pointer;display: flex;align-items: center;padding: 10px 8px;">
+          <span nz-icon nzType="logout" nzTheme="outline" style="color: red;padding-right: 15px"></span>
+          <span>Logout</span>
+        </div>
+        <div (click)="logout()" style="cursor: pointer;display: flex;align-items: center;padding: 10px 8px;">
+          <span nz-icon nzType="logout" nzTheme="outline" style="color: red;padding-right: 15px"></span>
+          <span>Logout</span>
+        </div>
+
       </ng-template>
       <span style="margin-left: 10px; font-weight: 500;">Vũ Đức Hải</span>
     </div>

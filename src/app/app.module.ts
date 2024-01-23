@@ -16,7 +16,7 @@ import { ApiService } from './api/services/api.service';
 import { SharedModuleModule } from './shared/shared-module/shared-module.module';
 import { CustomErrorInterceptor } from './shared/interceptors/CustomErrorInterceptor';
 import { LoadingSpinnerModule } from './shared/component/loading-spinner/loading-spinner.module';
-import { LoadingSpinnerService } from './api/services/loadingSpinnerService';
+import { LoadingSpinnerService } from './api/services/loadingSpinnerService.service';
 import { StoreModule } from '@ngrx/store';
 import { appReducers } from './shared/store/app.reducer';
 
