@@ -7,9 +7,10 @@
     <nz-content>
       <nz-breadcrumb>
         <nz-breadcrumb-item>Home</nz-breadcrumb-item>
-        @for (breadcrumb of breadcrumbData.name; track breadcrumb) {
-          <nz-breadcrumb-item>{{ breadcrumb }}</nz-breadcrumb-item>
-        }
+        @if(breadcrumbData) { @for (breadcrumb of breadcrumbData.name; track
+        breadcrumb) {
+        <nz-breadcrumb-item>{{ breadcrumb }}</nz-breadcrumb-item>
+        } }
       </nz-breadcrumb>
       <div class="inner-content">
         <router-outlet></router-outlet>

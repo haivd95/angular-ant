@@ -1,5 +1,6 @@
 export interface MenuConfigItem {
+    name?: string;
     rootPath?: string;
-    modulePath?: string;
-    icon?: string
+    icon?: string;
+    menuChild?: Array<any>;
 }

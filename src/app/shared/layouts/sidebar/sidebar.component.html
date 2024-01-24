@@ -3,63 +3,25 @@
   <span>Angular Admin</span>
 </div>
 <div id="scrollbar-color" [ngClass]="isScrollable? 'scrollbar' : 'scrollbar-none'">
-    <ul nz-menu nzTheme="dark" nzMode="inline" nzCollapsible="true">
-      <li nz-menu-item>
-        <span nz-icon nzType="pie-chart"></span>
-        <span>Option 1</span>
-      </li>
-      <li nz-menu-item>
-        <span nz-icon nzType="desktop"></span>
-        <span>Option 2</span>
-      </li>
-      <li nz-submenu nzTitle="User" nzIcon="user">
-        <ul>
-          <li nz-menu-item [routerLink]="['./products']">Products</li>
-          <li nz-menu-item [routerLink]="['./posts']">Posts</li>
-          <li nz-menu-item>Alex</li>
-        </ul>
-      </li>
-      <li nz-submenu nzTitle="Team" nzIcon="team">
-        <ul>
-          <li nz-menu-item>Team 1</li>
-          <li nz-menu-item>Team 2</li>
-        </ul>
-      </li>
-      <li nz-submenu nzTitle="Team" nzIcon="team">
-        <ul>
-          <li nz-menu-item>Team 1</li>
-          <li nz-menu-item>Team 2</li>
-        </ul>
-      </li>
-      <li nz-submenu nzTitle="Team" nzIcon="team">
-        <ul>
-          <li nz-menu-item>Team 1</li>
-          <li nz-menu-item>Team 2</li>
-        </ul>
-      </li>
-      <li nz-submenu nzTitle="Team" nzIcon="team">
-        <ul>
-          <li nz-menu-item>Team 1</li>
-          <li nz-menu-item>Team 2</li>
-        </ul>
-      </li>
-      <li nz-submenu nzTitle="Team" nzIcon="team">
-        <ul>
-          <li nz-menu-item>Team 1</li>
-          <li nz-menu-item>Team 2</li>
-        </ul>
-      </li>
-      <li nz-submenu nzTitle="Team" nzIcon="team">
-        <ul>
-          <li nz-menu-item>Team 1</li>
-          <li nz-menu-item>Team 2</li>
-        </ul>
-      </li>
-      <li nz-submenu nzTitle="Team" nzIcon="team">
-        <ul>
-          <li nz-menu-item>Team 1</li>
-          <li nz-menu-item>Team 2</li>
-        </ul>
-      </li>
-    </ul>
+  <ul nz-menu nzTheme="dark" nzMode="inline" nzCollapsible="true">
+    @for (item of listMenu; track $index) {
+    @if(item.menuChild?.length){
+    <li nz-submenu nzTitle="{{item.name}}" nzIcon="{{item.icon}}">
+      @if(item.menuChild){
+      <ul>
+        @for (child of item.menuChild; track $index) {
+        <li nz-menu-item [routerLink]="child.rootPath">{{child.name}}</li>
+        }
+      </ul>
+      }
+    </li>
+    } @else {
+    <li nz-menu-item>
+      <span nz-icon nzType={{item.icon}}></span>
+      <span>{{item.name}}</span>
+    </li>
+    }
+    }
+  </ul>
+
 </div>

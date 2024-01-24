@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component, ElementRef } from '@angular/core';
+import { MenuConfigNavigate } from '../../../app-menu';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,8 +9,10 @@ import { ChangeDetectorRef, Component, ElementRef } from '@angular/core';
 export class SidebarComponent {
 
   isScrollable: boolean = false;
+  listMenu = MenuConfigNavigate;
 
-  constructor(private elementRef: ElementRef, private cdr: ChangeDetectorRef) { }
+  constructor(private elementRef: ElementRef, private cdr: ChangeDetectorRef) {
+  }
 
   ngAfterContentChecked() {
     this.cdr.detectChanges();
