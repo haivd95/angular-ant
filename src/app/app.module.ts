@@ -13,7 +13,7 @@ import { IconDefinition } from '@ant-design/icons-angular';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { ApiService } from './api/services/api.service';
-import { SharedModuleModule } from './shared/shared-module/shared-module.module';
+import { SharedModule } from './shared/shared-module/shared-module.module';
 import { CustomErrorInterceptor } from './shared/interceptors/CustomErrorInterceptor';
 import { LoadingSpinnerModule } from './shared/component/loading-spinner/loading-spinner.module';
 import { LoadingSpinnerService } from './api/services/loadingSpinnerService.service';
@@ -37,7 +37,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     ),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     FormsModule,
-    SharedModuleModule,
+    SharedModule,
     LoadingSpinnerModule
   ],
   exports: [FormsModule],

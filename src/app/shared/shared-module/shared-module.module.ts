@@ -6,6 +6,8 @@ import { ErrorPageModule } from '../../../error-page/error-page.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FocusFirstInvalidFieldDirective } from '../directive/focus-form.directive';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [],
@@ -20,10 +22,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       timeOut: 10000,
       positionClass: 'toast-top-center',
       preventDuplicates: true,
-    }),
+    })
   ],
   providers: [
   ],
-  exports: [ErrorPageModule]
+  exports: [ErrorPageModule, FormsModule]
 })
-export class SharedModuleModule { }
+export class SharedModule { }
