@@ -6,7 +6,6 @@ import { ErrorPageModule } from '../../../error-page/error-page.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FocusFirstInvalidFieldDirective } from '../directive/focus-form.directive';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({

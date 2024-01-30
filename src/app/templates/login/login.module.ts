@@ -5,8 +5,7 @@ import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { LoginComponent } from './login.component';
 import { LoginRoutingModule, routes } from './login.routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { FocusFirstInvalidFieldDirective } from '../../shared/directive/focus-form.directive';
-
+import { DirectivesModule } from '../../shared/directive/directives.module';
 @NgModule({
   declarations: [LoginComponent],
   imports: [
@@ -16,6 +15,7 @@ import { FocusFirstInvalidFieldDirective } from '../../shared/directive/focus-fo
     NzPopoverModule,
     LoginRoutingModule,
     ReactiveFormsModule,
+    DirectivesModule
   ],
   providers: []
 })
