@@ -19,11 +19,18 @@ import { LoadingSpinnerModule } from './shared/component/loading-spinner/loading
 import { LoadingSpinnerService } from './api/services/loadingSpinnerService.service';
 import { StoreModule } from '@ngrx/store';
 import { appReducers } from './shared/store/app.reducer';
+import { defineLocale, viLocale } from 'ngx-bootstrap';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
 };
 const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key])
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
+}
 
 @NgModule({
   declarations: [
@@ -36,14 +43,24 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
       { metaReducers }
     ),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      },
+      isolate: true
+    }),
     FormsModule,
     SharedModule,
     LoadingSpinnerModule
   ],
-  exports: [FormsModule],
+  exports: [FormsModule, TranslateModule],
   providers: [
     HttpClient,
     ApiService,
+    TranslateService,
     { provide: LocationStrategy, useClass: PathLocationStrategy },
     { provide: 'APP_CONFIG', useClass: AppConfig },
     { provide: HTTP_INTERCEPTORS, useClass: CustomErrorInterceptor, multi: true },

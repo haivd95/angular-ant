@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ProductsRoutingModule, routes } from './products.routing.module';
 import { ProductComponent } from './product-component/product.component';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [ProductComponent],
@@ -11,7 +12,8 @@ import { NzPopoverModule } from 'ng-zorro-antd/popover';
     CommonModule,
     ProductsRoutingModule,
     FormsModule,
-    NzPopoverModule
+    NzPopoverModule,
+    TranslateModule
   ],
   providers: []
 })
