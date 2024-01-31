@@ -1,3 +1,8 @@
 {
-  "vietnamese": "Vu Duc Hai"
+  "vietnamese": "Vu Duc Hai",
+  "changeLanguage": "Change language",
+  "button": {
+    "cancel": "Cancel",
+    "submit": "Submit"
+  }
 }

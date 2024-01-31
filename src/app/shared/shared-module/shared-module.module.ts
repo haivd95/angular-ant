@@ -7,7 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-
+import { NzModalModule } from 'ng-zorro-antd/modal';
 @NgModule({
   declarations: [],
   imports: [
@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     NgbModule,
     ErrorPageModule,
     BrowserAnimationsModule,
+    NzModalModule,
     ToastrModule.forRoot({
       timeOut: 10000,
       positionClass: 'toast-top-center',

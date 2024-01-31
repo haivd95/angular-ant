@@ -20,6 +20,8 @@ import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { TranslateModule } from '@ngx-translate/core';
 @NgModule({
   declarations: [LayoutComponent, FooterComponent, SidebarComponent, HeaderComponent],
   imports: [
@@ -39,7 +41,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NzPopoverModule,
     NzButtonModule,
     NzAvatarModule,
-    NgbModule
+    NgbModule,
+    NzModalModule,
+    TranslateModule
   ],
   providers: []
 })

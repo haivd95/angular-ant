@@ -19,9 +19,9 @@ import { LoadingSpinnerModule } from './shared/component/loading-spinner/loading
 import { LoadingSpinnerService } from './api/services/loadingSpinnerService.service';
 import { StoreModule } from '@ngrx/store';
 import { appReducers } from './shared/store/app.reducer';
-import { defineLocale, viLocale } from 'ngx-bootstrap';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
@@ -44,7 +44,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     TranslateModule.forRoot({
-      defaultLanguage: 'en',
+      defaultLanguage: localStorage.getItem('language') ?? 'en',
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
@@ -54,7 +54,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     FormsModule,
     SharedModule,
-    LoadingSpinnerModule
+    LoadingSpinnerModule,
   ],
   exports: [FormsModule, TranslateModule],
   providers: [

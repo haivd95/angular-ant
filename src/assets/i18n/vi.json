@@ -1,3 +1,8 @@
 {
-  "vietnamese": "Vũ Đức Hải"
+  "vietnamese": "Vũ Đức Hải",
+  "changeLanguage": "Đổi ngôn ngữ",
+  "button": {
+    "cancel": "Hủy",
+    "submit": "Thêm mới"
+  }
 }

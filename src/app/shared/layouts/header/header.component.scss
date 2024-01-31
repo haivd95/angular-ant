@@ -6,6 +6,7 @@ nz-header {
   border-radius: 10px;
   margin-top: 10px;
 }
+
 .ant-layout-header {
   padding: 0px;
 }
@@ -13,4 +14,20 @@ nz-header {
 .user {
   float: right;
   padding-right: 40px;
+}
+
+.language {
+  .content {
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    padding: 15px;
+    background-color: #1890ff;
+    transition: background-color 0.6s ease-out 100ms;
+    display: flex;
+    align-items: center;
+    &:hover {
+      background-color: #46aafc;
+    }
+  }
 }

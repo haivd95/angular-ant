@@ -1,43 +1,137 @@
 <nz-header nzTheme="light">
   <div class="">
-    <div class="user" style=" clear: both;">
-      <nz-avatar
-        style="cursor: pointer;"
-        nzIcon="user"
-        [nzSize]="46"
-        nz-popover
-        nz-popover
-        [nzPopoverContent]="contentTemplate"
-        nzPopoverPlacement="bottom"
-        nzPopoverTrigger="click"
-      />
-      <ng-template #contentTemplate>
-        <div (click)="logout()" style="cursor: pointer;display: flex;align-items: center;padding: 10px 8px;">
-          <span nz-icon nzType="logout" nzTheme="outline" style="color: red;padding-right: 15px"></span>
-          <span>Logout</span>
+    <div class="row">
+      <div class="col-md-6">
+        <div style="float: left;padding-left: 15px;">
+          <button nz-button nzType="primary" nzShape="circle" (click)="showModal()"><span nz-icon nzType="global"></span></button>
+          <nz-modal [(nzVisible)]="isVisible" nzTitle="{{'changeLanguage' | translate}}" (nzOnCancel)="handleCancel()">
+            <div *nzModalContent>
+              <div class="row language">
+                <div class="col-md-4" (click)="changeLanguage('vi')">
+                  <p class="content" >
+                    <span>Vietnamese</span>
+                    @if (isLanguage === 'vi') {
+                      <span nz-icon nzType="check" nzTheme="outline" style="display: flex;margin-left: 10px;"></span>
+                    }
+                  </p>
+                </div>
+                <div class="col-md-4" (click)="changeLanguage('en')">
+                  <p class="content" >
+                    <span>English</span>
+                    @if (isLanguage === 'en') {
+                      <span nz-icon nzType="check" nzTheme="outline" style="display: flex;margin-left: 10px;"></span>
+                    }
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div *nzModalFooter>
+            </div>
+          </nz-modal>
         </div>
-        <div (click)="logout()" style="cursor: pointer;display: flex;align-items: center;padding: 10px 8px;">
-          <span nz-icon nzType="logout" nzTheme="outline" style="color: red;padding-right: 15px"></span>
-          <span>Logout</span>
+      </div>
+      <div class="col-md-6">
+        <div class="user" style="clear: both">
+          <nz-avatar
+            style="cursor: pointer"
+            nzIcon="user"
+            [nzSize]="46"
+            nz-popover
+            nz-popover
+            [nzPopoverContent]="contentTemplate"
+            nzPopoverPlacement="bottom"
+            nzPopoverTrigger="click"
+          />
+          <ng-template #contentTemplate>
+            <div
+              (click)="logout()"
+              style="
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                padding: 10px 8px;
+              "
+            >
+              <span
+                nz-icon
+                nzType="logout"
+                nzTheme="outline"
+                style="color: red; padding-right: 15px"
+              ></span>
+              <span>Logout</span>
+            </div>
+            <div
+              (click)="logout()"
+              style="
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                padding: 10px 8px;
+              "
+            >
+              <span
+                nz-icon
+                nzType="logout"
+                nzTheme="outline"
+                style="color: red; padding-right: 15px"
+              ></span>
+              <span>Logout</span>
+            </div>
+            <div
+              (click)="logout()"
+              style="
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                padding: 10px 8px;
+              "
+            >
+              <span
+                nz-icon
+                nzType="logout"
+                nzTheme="outline"
+                style="color: red; padding-right: 15px"
+              ></span>
+              <span>Logout</span>
+            </div>
+            <div
+              (click)="logout()"
+              style="
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                padding: 10px 8px;
+              "
+            >
+              <span
+                nz-icon
+                nzType="logout"
+                nzTheme="outline"
+                style="color: red; padding-right: 15px"
+              ></span>
+              <span>Logout</span>
+            </div>
+            <div
+              (click)="logout()"
+              style="
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                padding: 10px 8px;
+              "
+            >
+              <span
+                nz-icon
+                nzType="logout"
+                nzTheme="outline"
+                style="color: red; padding-right: 15px"
+              ></span>
+              <span>Logout</span>
+            </div>
+          </ng-template>
+          <span style="margin-left: 10px; font-weight: 500">Vũ Đức Hải</span>
         </div>
-        <div (click)="logout()" style="cursor: pointer;display: flex;align-items: center;padding: 10px 8px;">
-          <span nz-icon nzType="logout" nzTheme="outline" style="color: red;padding-right: 15px"></span>
-          <span>Logout</span>
-        </div>
-        <div (click)="logout()" style="cursor: pointer;display: flex;align-items: center;padding: 10px 8px;">
-          <span nz-icon nzType="logout" nzTheme="outline" style="color: red;padding-right: 15px"></span>
-          <span>Logout</span>
-        </div>
-        <div (click)="logout()" style="cursor: pointer;display: flex;align-items: center;padding: 10px 8px;">
-          <span nz-icon nzType="logout" nzTheme="outline" style="color: red;padding-right: 15px"></span>
-          <span>Logout</span>
-        </div>
-        <div>
-          <button (click)="changeLanguage('en')">English</button>
-          <button (click)="changeLanguage('vi')">Vietnamese</button>
-        </div>
-      </ng-template>
-      <span style="margin-left: 10px; font-weight: 500;">Vũ Đức Hải</span>
+      </div>
     </div>
   </div>
 </nz-header>
